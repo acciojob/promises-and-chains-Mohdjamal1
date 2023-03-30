@@ -1,26 +1,27 @@
 //your JS code here. If required.
-let nameElement = document.querySelector('#name');
-let ageElement = document.querySelector('#age');
-let btnElement = document.querySelector('#btn');
 
-let promise = new promise((resolve, reject) => {
-	setTimeout(() => {
-		let age=ageElement.value;
-		let name=nameElement.value;
-		
-		if (age > 18) {
-			resolve(`Welcome, ${name}. You can vote.`);
-		}else{
-			reject(`Oh sorry ${name}. You aren't old enough.`);
-		}
-	}, 4000);
+var nameElement = document.querySelector("#name");
+var ageElement = document.querySelector("#age");
+var btnElement = document.querySelector("#btn");
+
+var promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    var age = ageElement.value;
+    var name = nameElement.value;
+    if (age < 18) {
+      reject(`Oh sorry ${name}. You aren't old enough`);
+    } else {
+      resolve(`Welcome, ${name}. You can vote.`);
+    }
+  }, 4000);
 });
 
 function callPromise() {
-	return promise;
+    return promise;
 }
 function handleSubmit(e) {
-	e.preventDefault();
-	callPromise().then(alert).catch(alert);
+    e.preventDefault();
+  callPromise().then(alert).catch(alert);
 }
-btnElement.addEventListener('click',handleSubmit);
+
+btnElement.addEventListener("click", handleSubmit);
