@@ -1,7 +1,7 @@
 //your JS code here. If required.
-let nameElement = document.queryselector('#name');
-let ageElement = document.queryselector('#age');
-let btnElement = document.queryselector('#btn');
+let nameElement = document.querySelector('#name');
+let ageElement = document.querySelector('#age');
+let btnElement = document.querySelector('#btn');
 
 let promise = new promise((resolve, reject) =>{
 	setTimeout(() => {
